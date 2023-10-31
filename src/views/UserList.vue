@@ -1,33 +1,38 @@
 <template>
     <div class="user-list">
-      <table class="table table-bordered table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th>User</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Active</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="u in users" :key="u.id">
-            <td>{{ u.firstName + " " + u.lastName }}</td>
-            <td>{{ u.email }}</td>
-            <td>{{ getRoleNameById(u.roleId) }}</td>
-            <td>
-              <span :class="{'text-success': u.active, 'text-danger': !u.active}">
-                {{ u.active ? "Yes" : "No" }}
-              </span>
-            </td>
-            <td>
-              <button class="btn btn-primary btn-sm" @click="editUser(u.id)">Edit</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="overflow-x-auto">
+        <table class="table table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>User</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Active</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="u in users" :key="u.id">
+              <td>{{ u.firstName + " " + u.lastName }}</td>
+              <td>{{ u.email }}</td>
+              <td>{{ getRoleNameById(u.roleId) }}</td>
+              <td>
+                <span :class="{'text-success': u.active, 'text-danger': !u.active}">
+                  {{ u.active ? "Yes" : "No" }}
+                </span>
+              </td>
+              <td>
+                <button class="btn btn-primary btn-sm" @click="editUser(u.id)">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </template>
+  
+  
+  
   
   
 
