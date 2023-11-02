@@ -30,11 +30,7 @@
       </div>
     </div>
   </template>
-  
-  
-  
-  
-  
+
 
 <script>
 import {getAllUsers, getAllRoles} from "@/api"
@@ -57,7 +53,7 @@ export default {
           // Note the nullish operator - I noticed that this method gets called even before the roles have been fetched!
         },
         editUser(id){
-            console.log("TODO: edit user " + id);
+          this.$router.push({name:'UserDetails', params: {userId:id}});
         }
     }
 }
