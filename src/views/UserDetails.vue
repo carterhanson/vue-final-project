@@ -3,21 +3,25 @@
     <form @submit.prevent="onSubmit" class="space-y-4">
       <div>
         <label class="block font-medium">First Name:</label>
+		    <span class="text-danger">{{ errors.firstName }}</span>
         <input v-model="user.firstName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
       <div>
         <label class="block font-medium">Last Name:</label>
+		    <span class="text-danger">{{ errors.lastName }}</span>
         <input v-model="user.lastName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
       <div>
         <label class="block font-medium">Email:</label>
+		    <span class="text-danger">{{ errors.email }}</span>
         <input v-model="user.email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
       <div>
         <label class="block font-medium">Password:</label>
+		    <span class="text-danger">{{ errors.password }}</span>
         <input type="password" v-model="user.password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
@@ -34,8 +38,8 @@
       </div>
 
       <div class="flex justify-between items-center">
-        <button type="submit" id="btnSubmit" name="submit button" class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-full focus:outline-none focus:ring">Submit</button>
-        <button type="button" @click="$router.push({ name: 'UserList' })" class="text-gray-500 hover:text-gray-700">Cancel</button>
+        <button type="submit" name="submit button" class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-full focus:outline-none focus:ring">Submit</button>
+        <button type="button" @click="$router.push({ name: 'UserList' })" class="text-gray-500 hover:text-gray-900">Cancel</button>
       </div>
     </form>
   </div>
@@ -50,7 +54,8 @@ export default {
   data(){
       return{
           user:null,
-          roles:[]
+          roles:[],
+          errors:{}
       }
   },
   mounted(){
@@ -75,11 +80,40 @@ export default {
         }
       },
       isValid(){
-        if(!this.user.firstName || !this.user.lastName || !this.user.email || !this.user.password){
-            return false;
-        }
-        return true;
-      }
+          let valid = true;
+          this.errors = {};
+          if(this.user.firstName == ""){
+            this.errors.firstName = "First Name is required";
+            valid = false;
+          }
+
+          if(this.user.lastName == ""){
+            this.errors.lastName = "Last Name is required";
+            valid = false;
+          }
+
+          if(this.user.email == ""){
+            this.errors.email = "Email is required";
+            valid = false;
+          }else if(!this.validateEmailAddress(this.user.email)){
+            this.errors.email = "Enter a valid Email";
+            valid = false;
+          }
+
+          if(this.user.password == ""){
+            this.errors.password = "Password is required";
+            valid = false;
+          }else if(this.user.password.length > 30){
+            this.errors.password = "Password cannot exceed 30 characters";
+            valid = false;
+          }
+
+          return valid;
+      },
+      validateEmailAddress(email){
+		    var regExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		    return regExp.test(email);
+		}
   }
 }
 </script>
