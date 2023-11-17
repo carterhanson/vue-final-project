@@ -59,7 +59,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-  /*Put CSS styles here*/
-</style>
