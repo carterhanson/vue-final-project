@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import UserList from '../views/UserList.vue'
 import UserDetails from '../views/UserDetails.vue'
 import Login from '../views/Login.vue'
+import WorkoutForm from '../views/WorkoutForm'
 
 const routes = [
   {
@@ -30,6 +31,10 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login 
+  },
+  {
+    path: '/workout-form',
+    component: WorkoutForm,
   }
 ]
 

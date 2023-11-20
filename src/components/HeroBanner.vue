@@ -1,7 +1,7 @@
 <template>
-  <div class="hero-banner bg-blue-500 text-white p-4 text-center">
-    <h1 class="text-3xl font-bold">{{ title }}</h1>
-    <button @click="addWorkout" class="bg-green-500 text-white px-4 py-2 mt-4 rounded-full">
+  <div class="hero-banner flex bg-stone-400 text-blue-500 p-4 items-center">
+    <h1 class="text-3xl font-bold flex-grow">{{ title }}</h1>
+    <button @click="addWorkout" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full">
       + Add Workout
     </button>
   </div>
@@ -18,7 +18,7 @@ export default {
     addWorkout() {
       // Handle the logic for adding a new workout
       // You may emit an event or use a router link to navigate to the workout form
-      console.log("Add Workout clicked!");
+      this.$router.push('/workout-form');
     },
   },
 };

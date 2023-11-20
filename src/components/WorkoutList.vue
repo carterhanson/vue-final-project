@@ -1,6 +1,9 @@
 <template>
-      <h2>Your Workouts</h2>
-      
+    <div class="workout-list">
+        <div class="overflow-x-auto">
+
+        </div>
+    </div>
 </template>
   
 <script>
