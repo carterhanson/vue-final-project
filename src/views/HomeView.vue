@@ -1,19 +1,19 @@
 <template>
   <div class="home">
-    <HelloWorld/>
+    <HeroBanner/>
     <WorkoutList />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HeroBanner from '@/components/HeroBanner.vue'
 import WorkoutList from '@/components/WorkoutList.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld,
+    HeroBanner,
     WorkoutList
   }
 }
