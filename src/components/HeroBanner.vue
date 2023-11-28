@@ -1,8 +1,8 @@
 <template>
-  <div class="hero-banner flex bg-stone-400 text-blue-500 p-4 items-center">
+  <div class="hero-banner flex p-4 items-center">
     <h1 class="text-3xl font-bold flex-grow">{{ title }}</h1>
     <button @click="addWorkout" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full">
-      + Add Workout
+      + Create Workout
     </button>
   </div>
 </template>

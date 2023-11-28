@@ -5,6 +5,7 @@ import UserDetails from '../views/UserDetails.vue'
 import Login from '../views/Login.vue'
 import WorkoutForm from '../views/WorkoutForm'
 import NotFound from '../views/NotFound.vue'
+import AddExercise from '../views/AddExercise.vue'
 
 const routes = [
   {
@@ -58,6 +59,11 @@ const routes = [
   { 
     path:"/:catchAll(.*)", 
     redirect: "/404",
+  },
+  {
+    path: "/add-exercise",
+    component: AddExercise,
+    meta: {title: "Add Exercise"}
   }
 ]
 

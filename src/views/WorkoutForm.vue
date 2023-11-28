@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-200 min-h-screen flex items-center justify-center">
+    <div class="bg-gray-200 flex items-center justify-center">
         <div class="max-w-md mx-auto p-4 bg-white rounded-md shadow-lg">
             <h2 class="text-2xl font-semibold mb-4">Create a Workout</h2>
             <form id="workout-form" class="space-y-4">
@@ -13,9 +13,6 @@
                     + Add Exercise
                     </button>
                 </div>
-
-                
-                <!-- Exercise selection and input fields go here -->
 
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-full focus:outline-none focus:ring">Create Workout</button>
             </form>
@@ -32,7 +29,7 @@ export default {
     },
     methods:{
         addExercise(){
-            console.log("add exercise")
+            this.$router.push('/add-exercise')
         }
     }
 };
