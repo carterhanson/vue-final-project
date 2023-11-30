@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user" class="max-w-md mx-auto p-4 bg-white rounded-md shadow-lg">
+  <div v-if="user" class="mt-4 max-w-md mx-auto p-4 bg-white rounded-md shadow-lg">
     <form @submit.prevent="onSubmit" class="space-y-4">
       <div>
         <label class="block font-medium">First Name:</label>

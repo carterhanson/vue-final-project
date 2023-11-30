@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-md mx-auto p-4 bg-white rounded-md shadow-lg">
+    <div class="mt-5 max-w-md mx-auto p-4 bg-white rounded-md shadow-lg">
         <form @submit.prevent="onSubmit" class="space-y-4">
             <div>
                 <h3 class="text-lg font-semibold mb-2">Add Exercise</h3>

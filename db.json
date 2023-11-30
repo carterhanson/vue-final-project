@@ -52,35 +52,35 @@
   "workouts": [
     {
       "workout_id": 1,
-      "user_id": 1,
+      "id": 96,
       "workout_name": "Leg Day",
       "date": "2023-09-20",
       "notes": "Focused on squats and lunges"
     },
     {
       "workout_id": 2,
-      "user_id": 2,
+      "id": 96,
       "workout_name": "Chest Day",
       "date": "2023-09-21",
       "notes": "Did bench press and push-ups"
     },
     {
       "workout_id": 3,
-      "user_id": 3,
+      "id": 3,
       "workout_name": "Back Day",
       "date": "2023-09-22",
       "notes": "Included deadlifts and pull-ups"
     }
   ],
   "exercises": [
-    {"exercise_id": 1, "exercise_name": "Bench Press", "muscle_group": "Chest", "description": "A compound exercise..."},
-    {"exercise_id": 2, "exercise_name": "Squat", "muscle_group": "Legs", "description": "A compound exercise..."},
-    {"exercise_id": 3, "exercise_name": "Deadlift", "muscle_group": "Back", "description": "A compound exercise..."},
-    {"exercise_id": 4, "exercise_name": "Pull-up", "muscle_group": "Back", "description": "An upper-body exercise..."}
+    {"id": 1, "exercise_name": "Bench Press", "muscle_group": "Chest", "description": "A compound exercise..."},
+    {"id": 2, "exercise_name": "Squat", "muscle_group": "Legs", "description": "A compound exercise..."},
+    {"id": 3, "exercise_name": "Deadlift", "muscle_group": "Back", "description": "A compound exercise..."},
+    {"id": 4, "exercise_name": "Pull-up", "muscle_group": "Back", "description": "An upper-body exercise..."}
   ],
   "workout_exercises": [
-    {"workout_exercise_id": 1, "workout_id": 1, "exercise_id": 2, "sets": 4, "repetitions": 12, "weight": 225.00, "notes": "Performed squats with proper form."},
-    {"workout_exercise_id": 2, "workout_id": 2, "exercise_id": 1, "sets": 3, "repetitions": 10, "weight": 185.00, "notes": "Used a spotter for bench press."},
-    {"workout_exercise_id": 3, "workout_id": 3, "exercise_id": 3, "sets": 5, "repetitions": 8, "weight": 315.00, "notes": "Focused on heavy deadlifts."}
+    {"id": 1, "workout_id": 1, "exercise_id": 2, "sets": 4, "repetitions": 12, "weight": 225.00, "notes": "Performed squats with proper form."},
+    {"id": 2, "workout_id": 2, "exercise_id": 1, "sets": 3, "repetitions": 10, "weight": 185.00, "notes": "Used a spotter for bench press."},
+    {"id": 3, "workout_id": 3, "exercise_id": 3, "sets": 5, "repetitions": 8, "weight": 315.00, "notes": "Focused on heavy deadlifts."}
   ]
 }

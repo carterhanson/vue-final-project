@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-sm mx-auto p-4 bg-white rounded-md shadow-lg">
+    <div class="mt-5 max-w-sm mx-auto p-4 bg-white rounded-md shadow-lg">
         <div class="login">
             <form @submit.prevent="onSubmit">
                 <div>

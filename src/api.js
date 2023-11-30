@@ -27,6 +27,32 @@ export function insertUser(user){
     return ax.post("users/", user).catch((error) => errorHandler("Error Inserting User:" + error));
 }
 
+export function getAllExercises(){
+    return ax.get("exercises/").then(resp => (resp.data)).catch(error => errorHandler("Error Getting All exercises" + error));
+}
+
+export function getAllWorkouts(){
+    return ax.get("workouts/").then(resp => (resp.data)).catch(error => errorHandler("Error Getting All workouts" + error));
+}
+
+export function getAllWorkoutExercises(){
+    return ax.get("workout_exercises/").then(resp => (resp.data)).catch(error => errorHandler("Error Getting All workout exercises" + error));
+}
+
+export function getWorkoutExercisesById(id){
+    return ax.get("workout_exercises/" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Workout Exercise By Id:" + error));
+}
+
+export function getWorkoutById(id){
+    return ax.get("workouts/" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Workouts By Id:" + error));
+}
+
+export function getExerciseById(id){
+    return ax.get("exercises" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Exercise By Id:" + error));
+}
+
+
+
 export function login(email, password) {
     return ax.get(`users/?email=${email}&password=${password}`).then(resp => {
 		if(resp.data.length == 1){

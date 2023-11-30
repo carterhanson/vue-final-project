@@ -1,6 +1,6 @@
 <template>
     <div class="user-list">
-      <div class="overflow-x-auto">
+      <div class="mt-4 overflow-x-auto">
         <button class="btn btn-primary btn-sm mb-4" @click="$router.push({name: 'AddUser' })">Add New User</button>
         <table class="table table-bordered table-hover">
           <thead class="thead-dark">
