@@ -2,10 +2,14 @@
     <div class=" pt-5 bg-gray-200 flex items-center justify-center">
         <div class="max-w-md mx-auto p-4 bg-white rounded-md shadow-lg">
             <h2 class="text-2xl font-semibold mb-4">Create a Workout</h2>
-            <form id="workout-form" class="space-y-4">
+            <form @submit.prevent="onSubmit" class="space-y-4">
                 <div class="mb-4">
                     <label for="workout-name" class="block font-medium">Workout Name:</label>
-                    <input type="text" id="workout-name" name="workout-name" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
+                    <input type="text" v-model="workout.workout_name" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="workout-notes" class="block font-medium">Notes:</label>
+                    <textarea v-model="workout.notes" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500" rows="4"></textarea>
                 </div>
                 <!-- WorkoutList  -->
                 <div>
@@ -25,10 +29,13 @@
 export default {
     data(){
         return{
-
+            workout: []
         }
     },
     methods:{
+        onSubmit(){
+
+        },
         addExercise(){
             this.$router.push('/add-exercise')
         }
