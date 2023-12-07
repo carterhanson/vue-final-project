@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import {logout as apiLogout} from '../api.js'
+
 export default {
   inject: ['GStore'],
   methods:{
@@ -26,7 +28,8 @@ export default {
     	evt.preventDefault();
     	this.GStore.currentUser = null;
     	sessionStorage.removeItem("currentUser");
-        this.$router.push({name:"Login"});
+      apiLogout();
+      this.$router.push({name:"Login"});
   	}
   }
 }

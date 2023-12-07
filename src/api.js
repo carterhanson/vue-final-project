@@ -1,6 +1,23 @@
 import axios from 'axios'
 
-let apiURL = 'http://localhost:8888'    // FOR REQUESTS TO THE JSON SERVER
+// let apiURL = 'http://localhost:8888'    // FOR REQUESTS TO THE JSON SERVER
+// let apiURL = 'http://localhost/api'   // FOR REQUESTS TO THE DEV API PROJECT
+
+let apiURL = 'http://localhost:8888'        // FOR REQUESTS TO THE JSON SERVER
+if(!location.port){
+    if(location.hostname == "localhost"){
+        apiURL = 'http://localhost/api'     // FOR REQUESTS TO THE DEV API PROJECT
+    }else{
+        apiURL = "https://your-domain/api"; // FOR REQUESTS TO THE LIVE API PROJECT
+        // Leave off the wwww!
+
+        // TODO: Ensure that https is being used
+        // Redirect to https if it's not being used
+        if (location.protocol !== 'https:') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    }
+}
 
 const ax = axios.create({
     baseURL: apiURL
@@ -62,13 +79,25 @@ export function insertWorkout(workout){
 
 
 export function login(email, password) {
-    return ax.get(`users/?email=${email}&password=${password}`).then(resp => {
-		if(resp.data.length == 1){
-			return resp.data[0] // we want to get the first, and hopefully only, user from the resp.data array
-		}else{
-			return null
-		}
-	}).catch((error) => errorHandler("Error Logging in:" + error));
+    if(apiURL == "http://localhost:8888"){
+        return ax.get(`users/?email=${email}&password=${password}`).then(resp => {
+            if(resp.data.length == 1){
+                return resp.data[0]
+            }else{
+                return null
+            }
+        });
+    }else{
+        return ax.post("login/", { email, password }).then(resp => resp?.data);
+    }
+}
+
+export function logout(){
+    if(apiURL == "http://localhost:8888"){
+        return;
+    }else{
+        return ax.get("logout/");
+    }
 }
 
 function errorHandler(msg){
