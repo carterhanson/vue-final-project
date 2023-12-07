@@ -72,19 +72,19 @@
   "workouts": [
     {
       "workout_id": 1,
-      "user_id": 1,
+      "id": 1,
       "workout_name": "Upper Body Workout",
       "notes": "Focus on chest and arms."
     },
     {
       "workout_id": 2,
-      "user_id": 2,
+      "id": 2,
       "workout_name": "Leg Day",
       "notes": "Squats and lunges."
     },
     {
       "workout_id": 3,
-      "user_id": 3,
+      "id": 96,
       "workout_name": "Arm Day",
       "notes": "Biceps and triceps exercises."
     }

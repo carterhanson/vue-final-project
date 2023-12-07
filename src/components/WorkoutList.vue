@@ -10,13 +10,16 @@
                 </thead>
                 <tbody>
                     <tr v-for="w in workouts" :key="w.id">
-                        <td>{{ w.workout_name }}</td>
+                        <td>{{ console.log(w) }}</td>
                         <td>
-                            <button class="btn btn-primary btn-sm ml-4">Edit</button>
+                            <button class="btn btn-primary btn-sm ml-4">View</button>
                             <button class="btn btn-primary btn-sm ml-4">Delete</button>
                         </td>
                     </tr>
                 </tbody>
+                <div>
+                    {{ getUser() }}
+                </div>
             </table>
         </div>
     </div>
@@ -32,11 +35,15 @@ export default {
         }
     },
     mounted(){
-        getAllWorkouts().then(workouts => this.workouts = workouts);
+        if(this.GStore.currentUser){
+            getWorkoutByUserId(this.GStore.currentUser.id).then(workouts => this.workouts = workouts)
+        }
       
     },
     methods: {
-       
+       getUser(){
+        console.log(this.GStore.currentUser.id)
+       }
     }
 };
 </script>

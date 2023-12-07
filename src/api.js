@@ -48,7 +48,7 @@ export function getWorkoutByUserId(id){
 }
 
 export function getExerciseById(id){
-    return ax.get("exercises" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Exercise By Id:" + error));
+    return ax.get("exercises/" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Exercise By Id:" + error));
 }
 
 export function insertExercise(exercise){
