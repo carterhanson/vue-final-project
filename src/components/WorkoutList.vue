@@ -12,7 +12,7 @@
                     <tr v-for="w in workouts" :key="w.id">
                         <td>{{ w.workout_name }}</td>
                         <td>
-                            <button class="btn btn-primary btn-sm ml-4">Edit</button>
+                            <button class="btn btn-primary btn-sm ml-4">View</button>
                             <button class="btn btn-primary btn-sm ml-4">Delete</button>
                         </td>
                     </tr>
@@ -23,20 +23,22 @@
 </template>
   
 <script>
-import {  getAllWorkouts, getUserById, getWorkoutByUserId } from '@/api';
+import { getWorkoutByUserId } from '@/api';
 export default {
     inject: ["GStore"],
     data(){
         return {  
-            workouts: [],
+            workouts: []
         }
     },
     mounted(){
-        getAllWorkouts().then(workouts => this.workouts = workouts);
+        if(this.GStore.currentUser){
+            getWorkoutByUserId(this.GStore.currentUser.id).then(workouts => this.workouts = workouts);
+        }
       
     },
     methods: {
-       
+
     }
 };
 </script>

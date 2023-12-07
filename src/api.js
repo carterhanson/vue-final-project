@@ -61,11 +61,11 @@ export function getWorkoutExercisesById(id){
 }
 
 export function getWorkoutByUserId(id){
-    return ax.get("workouts/" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Workouts By Id:" + error));
+    return ax.get("workouts/?user_id=" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Workouts By Id:" + error));
 }
 
 export function getExerciseById(id){
-    return ax.get("exercises" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Exercise By Id:" + error));
+    return ax.get("exercises/" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Exercise By Id:" + error));
 }
 
 export function insertExercise(exercise){
@@ -74,6 +74,10 @@ export function insertExercise(exercise){
 
 export function insertWorkout(workout){
     return ax.post("workouts/", workout).catch((error) => errorHandler("Error Inserting Workout:" + error));
+}
+
+export function insertWorkoutExercise(workoutExercise){
+    return ax.post("workout_exercises/", workoutExercise).catch((error) => errorHandler("Error Inserting Workout_exercise" + error));
 }
 
 
