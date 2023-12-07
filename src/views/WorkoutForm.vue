@@ -11,9 +11,8 @@
                     <label for="workout-notes" class="block font-medium">Notes:</label>
                     <textarea v-model="workout.notes" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500" rows="4"></textarea>
                 </div>
-                <!-- WorkoutList  -->
                 <div>
-                    <button @click="addExercise" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 mt-4 rounded-full">
+                    <button type="button" @click="addExercise" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 mt-4 rounded-full">
                     + Add Exercise
                     </button>
                 </div>
@@ -26,18 +25,41 @@
 </template>
   
 <script>
+import { insertWorkout } from '@/api';
 export default {
+    inject: ["GStore"],
     data(){
         return{
-            workout: []
+            workout: {},
+            errors: {}
         }
     },
     methods:{
         onSubmit(){
-
+            if(this.isValid()){
+                this.workout.user_id = this.GStore.currentUser.id;
+                console.log(this.workout)
+                insertWorkout(this.workout);
+            }
         },
         addExercise(){
             this.$router.push('/add-exercise')
+        },
+        isValid(){
+            let valid = true;
+            this.erorrs = {};
+
+            if(this.workout.workout_name == ""){
+                this.errors.name = "Workout Name is Required";
+                valid = false;
+            }
+            
+            if(this.workout.notes == ""){
+                this.errors.notes = "Notes Are Required";
+                valid = false;
+            }
+
+            return valid;
         }
     }
 };

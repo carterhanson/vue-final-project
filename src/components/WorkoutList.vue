@@ -26,24 +26,20 @@
 </template>
   
 <script>
-import {  getAllWorkouts, getUserById, getWorkoutByUserId } from '@/api';
+import { getWorkoutByUserId } from '@/api';
 export default {
     inject: ["GStore"],
     data(){
         return {  
-            workouts: [],
+            workouts: []
         }
     },
     mounted(){
-        if(this.GStore.currentUser){
-            getWorkoutByUserId(this.GStore.currentUser.id).then(workouts => this.workouts = workouts)
-        }
+        getAllWorkouts().then(workouts => this.workouts = workouts);
       
     },
     methods: {
-       getUser(){
-        console.log(this.GStore.currentUser.id)
-       }
+       
     }
 };
 </script>

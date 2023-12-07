@@ -35,6 +35,15 @@
       "password": "password",
       "roleId": 1,
       "active": true
+    },
+    {
+      "id": 98,
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@test.com",
+      "password": "test",
+      "roleId": 1,
+      "active": true
     }
   ],
   "roles": [
@@ -72,21 +81,33 @@
   "workouts": [
     {
       "workout_id": 1,
-      "id": 1,
+      "user_id": 1,
       "workout_name": "Upper Body Workout",
       "notes": "Focus on chest and arms."
     },
     {
       "workout_id": 2,
-      "id": 2,
+      "user_id": 2,
       "workout_name": "Leg Day",
       "notes": "Squats and lunges."
     },
     {
       "workout_id": 3,
-      "id": 96,
+      "user_id": 3,
       "workout_name": "Arm Day",
       "notes": "Biceps and triceps exercises."
+    },
+    {
+      "id": 4,
+      "user_id": 96,
+      "workout_name": "chest",
+      "notes": "test"
+    },
+    {
+      "workout_name": "fdsafds",
+      "notes": "fadsfas",
+      "user_id": 96,
+      "id": 7
     }
   ],
   "workout_exercises": [
@@ -95,7 +116,7 @@
       "exercise_id": 1,
       "sets": 3,
       "repetitions": 12,
-      "weight": 225.00,
+      "weight": 225,
       "notes": "Performed with a barbell."
     },
     {
@@ -103,7 +124,7 @@
       "exercise_id": 2,
       "sets": 4,
       "repetitions": 10,
-      "weight": 135.00,
+      "weight": 135,
       "notes": "Use proper form and depth."
     },
     {
@@ -111,7 +132,7 @@
       "exercise_id": 3,
       "sets": 3,
       "repetitions": 15,
-      "weight": 25.00,
+      "weight": 25,
       "notes": "Use dumbbells for isolation."
     }
   ]
