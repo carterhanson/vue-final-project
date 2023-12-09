@@ -58,26 +58,6 @@
       "description": "A user with elevated permissions"
     }
   ],
-  "exercises": [
-    {
-      "exercise_id": 1,
-      "exercise_name": "Bench Press",
-      "muscle_group": "Chest",
-      "description": "Lift the barbell while lying on a bench."
-    },
-    {
-      "exercise_id": 2,
-      "exercise_name": "Squat",
-      "muscle_group": "Legs",
-      "description": "Lower your body by bending your knees and hips."
-    },
-    {
-      "exercise_id": 3,
-      "exercise_name": "Bicep Curl",
-      "muscle_group": "Arms",
-      "description": "Curl a dumbbell towards your shoulder."
-    }
-  ],
   "workouts": [
     {
       "id": 1,
@@ -108,32 +88,68 @@
       "notes": "fadsfas",
       "user_id": 96,
       "id": 7
+    },
+    {
+      "workout_name": "test22",
+      "notes": "fdsfsfsdf",
+      "user_id": 96,
+      "id": 8
+    },
+    {
+      "workout_name": "new",
+      "notes": "new",
+      "user_id": 96,
+      "id": 9
+    },
+    {
+      "workout_name": "new",
+      "notes": "new",
+      "user_id": 96,
+      "id": 10
+    },
+    {
+      "workout_name": "test",
+      "notes": "test",
+      "user_id": 96,
+      "id": 11
     }
   ],
-  "workout_exercises": [
+  "exercises": [
     {
+      "id": 1,
       "workout_id": 1,
-      "exercise_id": 1,
+      "exercise_name": "Bench Press",
       "sets": 3,
       "repetitions": 12,
       "weight": 225,
       "notes": "Performed with a barbell."
     },
     {
+      "id": 2,
       "workout_id": 2,
-      "exercise_id": 2,
+      "exercise_name": "Squat",
       "sets": 4,
       "repetitions": 10,
       "weight": 135,
       "notes": "Use proper form and depth."
     },
     {
+      "id": 3,
       "workout_id": 3,
-      "exercise_id": 3,
+      "exercise_name": "Bicep Curl",
       "sets": 3,
       "repetitions": 15,
       "weight": 25,
       "notes": "Use dumbbells for isolation."
+    },
+    {
+      "id": 4,
+      "workout_id": 3,
+      "exercise_name": "Pull up",
+      "sets": 3,
+      "repetitions": 15,
+      "weight": 25,
+      "notes": "used 15 lbs more than bodyweight"
     }
   ]
 }

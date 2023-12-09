@@ -15,17 +15,16 @@
             </div>
 
             <div>
-                <label for="weight" class="block font-medium">Weight</label>
-                <span class="text-danger">{{ errors.weight }}</span>
-                <input type="text" v-model="exercise.weight" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
-            </div>
-
-            <div>
                 <label for="reps" class="block font-medium">Reps</label>
                 <span class="text-danger">{{ errors.repetitions }}</span>
                 <input type="text" v-model="exercise.repetitions" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
             </div>
-            
+
+            <div>
+                <label for="weight" class="block font-medium">Weight</label>
+                <span class="text-danger">{{ errors.weight }}</span>
+                <input type="text" v-model="exercise.weight" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
+            </div>
                         
             <div class="mb-4">
                 <label for="exercise-notes" class="block font-medium">Notes:</label>
@@ -35,21 +34,20 @@
 
             <div class="flex justify-between items-center">
                 <button type="submit" name="submit button" class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-full focus:outline-none focus:ring">Submit</button>
-                <button type="button" @click="$router.push('/workout-form')" class="text-gray-500 hover:text-gray-900">Cancel</button>
+                <button type="button" @click="$router.push({path: '/'})" class="text-gray-500 hover:text-gray-900">Cancel</button>
             </div>
         </form>
     </div>
 </template>
 
 <script>
-import { insertExercise, insertWorkoutExercise } from '@/api';
+import { insertExercise } from '@/api';
 export default {
+    props: ["workoutId"],
     data(){
         return{
             exercise: {},
-            workoutExercise: {},
             errors:{}
-
         }
     },
 

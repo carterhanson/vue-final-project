@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import WorkoutForm from '../views/WorkoutForm'
 import NotFound from '../views/NotFound.vue'
 import AddExercise from '../views/AddExercise.vue'
+import ViewWorkout from '../views/ViewWorkout.vue'
 
 const routes = [
   {
@@ -62,8 +63,21 @@ const routes = [
   },
   {
     path: "/add-exercise",
+    name: "AddExercise",
     component: AddExercise,
+    props: (route) => ({
+      workoutId: parseInt(route.params.workoutId, 10), // Ensure it's an integer
+    }),
     meta: {title: "Add Exercise"}
+  },
+  {
+    path: '/view-workout/:workoutId',
+    name: 'ViewWorkout',
+    component: ViewWorkout,
+    props: (route) => ({
+      workoutId: parseInt(route.params.workoutId, 10), // Ensure it's an integer
+    }),
+    meta: {title: "View Workout"}
   }
 ]
 
