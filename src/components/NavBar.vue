@@ -12,6 +12,7 @@
 
         <router-link v-if="!GStore.currentUser" :to="{ name: 'Login' }" class="text-white hover:text-gray-300 transition duration-300">Login</router-link>
 
+        <router-link v-if="!GStore.currentUser" :to="{ name: 'AddUser' }" class="text-white hover:text-gray-300 transition duration-300">Sign Up</router-link>
         <a v-else @click="logout" href="#" class="text-white hover:text-gray-300 transition duration-300">Log Out</a>
       </div>
     </div>

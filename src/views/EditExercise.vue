@@ -35,7 +35,7 @@
 
       <div class="flex justify-between items-center">
         <button type="submit" name="submit button" class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-full focus:outline-none focus:ring">Save Changes</button>
-        <button type="button" @click="$router.push({ path: '/' })" class="text-gray-500 hover:text-gray-900">Cancel</button>
+        <button type="button" @click="$router.push({ path: '/view-workout/' + exercise.workout_id })" class="text-gray-500 hover:text-gray-900">Cancel</button>
       </div>
     </form>
   </div>

@@ -58,10 +58,9 @@ export default {
     methods:{
             onSubmit(){
                 if(this.isValid()){
-                    // this.exercise.workout_id = this.workoutId;
-                    console.log(this.workoutId);
-                    console.log(this.exercise);
-                    insertExercise(this.exercise);
+                    const prevId = this.workoutId
+                    this.exercise.workout_id = this.workoutId;
+                    insertExercise(this.exercise).then(resp => this.$router.push({name: 'ViewWorkout', params: {prevId}}));
                 }
             },
 

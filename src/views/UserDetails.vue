@@ -47,7 +47,7 @@
 
 
 <script>
-import {getUserById, getAllRoles, updateUser, insertUser} from "@/api"
+import {getUserById, getAllRoles, updateUser, insertUser, login} from "@/api"
 
 export default {
   props:["userId"],
@@ -79,7 +79,9 @@ export default {
           if(this.userId > 0){
             updateUser(this.user).then(resp => this.$router.push({name: 'UserList'}));
           }else{
-            insertUser(this.user).then(resp => this.$router.push({name: 'UserList'}));
+            const email = this.user.email;
+            const password = this.user.password
+            insertUser(this.user).then(resp => this.$router.push({path: '/'}));
           }
         }
       },

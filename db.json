@@ -38,9 +38,36 @@
     },
     {
       "id": 98,
+      "firstName": "Carter",
+      "lastName": "Hanson",
+      "email": "test@test.com",
+      "password": "test",
+      "roleId": 1,
+      "active": true
+    },
+    {
+      "id": 99,
       "firstName": "test",
       "lastName": "test",
-      "email": "test@test.com",
+      "email": "test@123.com",
+      "password": "test",
+      "roleId": 1,
+      "active": true
+    },
+    {
+      "id": 100,
+      "firstName": "new",
+      "lastName": "new",
+      "email": "test@4.com",
+      "password": "test",
+      "roleId": 1,
+      "active": true
+    },
+    {
+      "id": 101,
+      "firstName": "new",
+      "lastName": "new",
+      "email": "new@123.com",
       "password": "test",
       "roleId": 1,
       "active": true
@@ -84,34 +111,10 @@
       "notes": "test"
     },
     {
-      "workout_name": "fdsafds",
-      "notes": "fadsfas",
+      "workout_name": "Legs",
+      "notes": "monday",
       "user_id": 96,
-      "id": 7
-    },
-    {
-      "workout_name": "test22",
-      "notes": "fdsfsfsdf",
-      "user_id": 96,
-      "id": 8
-    },
-    {
-      "workout_name": "new",
-      "notes": "new",
-      "user_id": 96,
-      "id": 9
-    },
-    {
-      "workout_name": "new",
-      "notes": "new",
-      "user_id": 96,
-      "id": 10
-    },
-    {
-      "workout_name": "test",
-      "notes": "test",
-      "user_id": 96,
-      "id": 11
+      "id": 12
     }
   ],
   "exercises": [
@@ -150,6 +153,68 @@
       "repetitions": 15,
       "weight": 25,
       "notes": "used 15 lbs more than bodyweight"
+    },
+    {
+      "exercise_name": "deadlift",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "500",
+      "notes": "Heavy",
+      "id": 5
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "500",
+      "notes": "Heavy",
+      "workout_id": 3,
+      "id": 6
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "500",
+      "notes": "Heavy",
+      "workout_id": 3,
+      "id": 7
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "6",
+      "repetitions": "6",
+      "weight": "600",
+      "notes": "sfds",
+      "workout_id": 9,
+      "id": 8
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "6",
+      "repetitions": "6",
+      "weight": "600",
+      "notes": "4234",
+      "workout_id": 9,
+      "id": 9
+    },
+    {
+      "exercise_name": "Squats",
+      "sets": "13",
+      "repetitions": "5",
+      "weight": "400",
+      "notes": "Went deep\nadded 5 more sets",
+      "workout_id": 12,
+      "id": 10
+    },
+    {
+      "exercise_name": "test",
+      "sets": "19",
+      "repetitions": "12",
+      "weight": "1220",
+      "notes": "...",
+      "workout_id": 12,
+      "id": 11
     }
   ]
 }

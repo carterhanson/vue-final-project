@@ -64,7 +64,7 @@ const routes = [
     redirect: "/404",
   },
   {
-    path: "/add-exercise/:exerciseId",
+    path: "/add-exercise/:workoutId",
     name: "AddExercise",
     component: AddExercise,
     props: (route) => {

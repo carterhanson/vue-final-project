@@ -44,8 +44,7 @@ export default {
     },
     cancelEdit() {
       // Redirect back to the view workout page without saving changes
-      const workoutId = this.$route.params.workoutId;
-      this.$router.push({ name: 'ViewWorkout', params: { workoutId } });
+      this.$router.push({ path: '/' });
     },
     isValid(){
         return true;
