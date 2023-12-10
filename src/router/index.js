@@ -3,10 +3,12 @@ import HomeView from '../views/HomeView.vue'
 import UserList from '../views/UserList.vue'
 import UserDetails from '../views/UserDetails.vue'
 import Login from '../views/Login.vue'
-import WorkoutForm from '../views/WorkoutForm'
+import WorkoutForm from '../views/WorkoutForm.vue'
 import NotFound from '../views/NotFound.vue'
 import AddExercise from '../views/AddExercise.vue'
 import ViewWorkout from '../views/ViewWorkout.vue'
+import EditExercise from '../views/EditExercise.vue';
+import EditWorkout from '../views/EditWorkout.vue'
 
 const routes = [
   {
@@ -62,22 +64,38 @@ const routes = [
     redirect: "/404",
   },
   {
-    path: "/add-exercise",
+    path: "/add-exercise/:exerciseId",
     name: "AddExercise",
     component: AddExercise,
-    props: (route) => ({
-      workoutId: parseInt(route.params.workoutId, 10), // Ensure it's an integer
-    }),
-    meta: {title: "Add Exercise"}
+    props: (route) => {
+      const workoutId = parseInt(route.params.workoutId, 10);
+      return { workoutId };
+    },
+    meta: { title: "Add Exercise" }
   },
   {
     path: '/view-workout/:workoutId',
     name: 'ViewWorkout',
     component: ViewWorkout,
-    props: (route) => ({
-      workoutId: parseInt(route.params.workoutId, 10), // Ensure it's an integer
-    }),
-    meta: {title: "View Workout"}
+    props: (route) => {
+      const workoutId = parseInt(route.params.workoutId, 10);
+      return { workoutId };
+    },
+    meta: { title: "View Workout" }
+  },
+  {
+    path: '/edit-exercise/:exerciseId',
+    name: 'EditExercise',
+    component: EditExercise,
+    props: true,
+    meta: { title: "Edit Exercise"}
+  },
+  {
+    path: '/edit-workout/:workoutId',
+    name: 'EditWorkout',
+    component: EditWorkout,
+    props: true,
+    meta: { title: "Edit Workout"}
   }
 ]
 

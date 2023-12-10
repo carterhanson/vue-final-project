@@ -50,11 +50,17 @@ export default {
             errors:{}
         }
     },
+    mounted() {
+        console.log(this.workoutId)
+    },
 
 
     methods:{
             onSubmit(){
                 if(this.isValid()){
+                    // this.exercise.workout_id = this.workoutId;
+                    console.log(this.workoutId);
+                    console.log(this.exercise);
                     insertExercise(this.exercise);
                 }
             },
@@ -78,7 +84,7 @@ export default {
                     valid = false;
                 }
 
-                if(this.exercise.repetitions = ""){
+                if(this.exercise.repetitions == ""){
                     this.errors.repetitions = "Reps are Required";
                     valid = false;
                 }

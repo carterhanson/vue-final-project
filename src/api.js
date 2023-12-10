@@ -39,7 +39,12 @@ export function getUserById(id){
 export function updateUser(user){
     return ax.put("users/" + user.id, user).catch((error) => errorHandler("Error Updating User:" + error));
 }
-
+export function updateExercise(exercise){
+    return ax.put("exercises/" + exercise.id, exercise).catch((error) => errorHandler("Error Updating User:" + error));
+}
+export function updateWorkout(workout){
+    return ax.put("workouts/" + workout.id, workout).catch((error) => errorHandler("Error Updating Workout:" + error));
+}
 export function insertUser(user){
     return ax.post("users/", user).catch((error) => errorHandler("Error Inserting User:" + error));
 }

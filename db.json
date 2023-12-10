@@ -74,8 +74,8 @@
     {
       "id": 3,
       "user_id": 96,
-      "workout_name": "Arm Day",
-      "notes": "Biceps and triceps exercises."
+      "workout_name": "ARM DAY!!!!",
+      "notes": "Biceps and triceps exercises!"
     },
     {
       "id": 4,
@@ -137,7 +137,7 @@
       "id": 3,
       "workout_id": 3,
       "exercise_name": "Bicep Curl",
-      "sets": 3,
+      "sets": "15",
       "repetitions": 15,
       "weight": 25,
       "notes": "Use dumbbells for isolation."
