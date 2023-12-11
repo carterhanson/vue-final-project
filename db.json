@@ -115,6 +115,18 @@
       "notes": "monday",
       "user_id": 96,
       "id": 12
+    },
+    {
+      "workout_name": "back",
+      "notes": "gsdf",
+      "user_id": 96,
+      "id": 13
+    },
+    {
+      "workout_name": "Pull Day",
+      "notes": "back and biceps",
+      "user_id": 7,
+      "id": 14
     }
   ],
   "exercises": [
@@ -215,6 +227,42 @@
       "notes": "...",
       "workout_id": 12,
       "id": 11
+    },
+    {
+      "exercise_name": "Bent over row",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "400",
+      "notes": "was light!",
+      "workout_id": 3,
+      "id": 12
+    },
+    {
+      "exercise_name": "Pull Up",
+      "sets": "5",
+      "repetitions": "10",
+      "weight": "25",
+      "notes": "2 sets of weighted pull ups 3 sets no weight",
+      "workout_id": 14,
+      "id": 13
+    },
+    {
+      "exercise_name": "Bent Over Row",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "225",
+      "notes": "Worked up to 225 did 2 working sets of 5 reps and 1 set of 185",
+      "workout_id": 14,
+      "id": 14
+    },
+    {
+      "exercise_name": "Hammer Curls",
+      "sets": "3",
+      "repetitions": "14",
+      "weight": "40",
+      "notes": "Alternating hand curls 14 each hand.\nfollowing sets had to match the 14 reps",
+      "workout_id": 14,
+      "id": 15
     }
   ]
 }

@@ -59,17 +59,41 @@ export default {
     onSubmit() {
       if (this.isValid()) {
         updateExercise(this.exercise).then(() => {
-          // Handle successful update, e.g., show a success message
           console.log('Exercise updated successfully!');
-          // Navigate back to the workout view or another appropriate page
           this.$router.push({ path: '/view-workout/' + this.exercise.workout_id });
         });
       }
     },
     isValid() {
-      
-      return true; // Replace with your validation logic
-    },
+      let valid = true;
+      this.errors = {};
+
+      if(this.exercise.exercise_name == ""){
+          this.errors.name = "Exercise Name is Required";
+          valid = false;
+      }
+
+      if(this.exercise.sets == ""){
+          this.errors.sets = "Number of Sets are Required";
+          valid = false;
+      }
+
+      if(this.exercise.weight == ""){
+          this.errors.weight = "Weight is Required";
+          valid = false;
+      }
+
+      if(this.exercise.repetitions == ""){
+          this.errors.repetitions = "Reps are Required";
+          valid = false;
+      }
+
+      if(this.exercise.notes == ""){
+          this.errors.notes = "Notes are Required"
+          valid = false;
+      }
+      return valid;
+  },
   },
 };
 </script>
