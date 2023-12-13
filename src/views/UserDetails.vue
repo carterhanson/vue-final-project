@@ -4,25 +4,25 @@
       <div>
         <label class="block font-medium">First Name:</label>
 		    <span class="text-danger">{{ errors.firstName }}</span>
-        <input v-model="user.firstName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
+        <input v-model="user.firstName" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
       <div>
         <label class="block font-medium">Last Name:</label>
 		    <span class="text-danger">{{ errors.lastName }}</span>
-        <input v-model="user.lastName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
+        <input v-model="user.lastName" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
       <div>
         <label class="block font-medium">Email:</label>
 		    <span class="text-danger">{{ errors.email }}</span>
-        <input v-model="user.email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
+        <input v-model="user.email" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
       <div>
         <label class="block font-medium">Password:</label>
 		    <span class="text-danger">{{ errors.password }}</span>
-        <input type="password" v-model="user.password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
+        <input type="password" required v-model="user.password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500">
       </div>
 
       <div>
@@ -34,7 +34,7 @@
 
       <div>
         <label class="block font-medium">Active:</label>
-        <input type="checkbox" v-model="user.active" class="mt-2">
+        <input type="checkbox" required v-model="user.active" class="mt-2">
       </div>
 
       <div class="flex justify-between items-center">
@@ -47,7 +47,7 @@
 
 
 <script>
-import {getUserById, getAllRoles, updateUser, insertUser} from "@/api"
+import {getUserById, getAllRoles, updateUser, insertUser, login} from "@/api"
 
 export default {
   props:["userId"],
@@ -79,7 +79,9 @@ export default {
           if(this.userId > 0){
             updateUser(this.user).then(resp => this.$router.push({name: 'UserList'}));
           }else{
-            insertUser(this.user).then(resp => this.$router.push({name: 'UserList'}));
+            const email = this.user.email;
+            const password = this.user.password
+            insertUser(this.user).then(resp => this.$router.push({path: '/'}));
           }
         }
       },

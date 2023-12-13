@@ -39,7 +39,12 @@ export function getUserById(id){
 export function updateUser(user){
     return ax.put("users/" + user.id, user).catch((error) => errorHandler("Error Updating User:" + error));
 }
-
+export function updateExercise(exercise){
+    return ax.put("exercises/" + exercise.id, exercise).catch((error) => errorHandler("Error Updating User:" + error));
+}
+export function updateWorkout(workout){
+    return ax.put("workouts/" + workout.id, workout).catch((error) => errorHandler("Error Updating Workout:" + error));
+}
 export function insertUser(user){
     return ax.post("users/", user).catch((error) => errorHandler("Error Inserting User:" + error));
 }
@@ -52,16 +57,16 @@ export function getAllWorkouts(){
     return ax.get("workouts/").then(resp => (resp.data)).catch(error => errorHandler("Error Getting All workouts" + error));
 }
 
-export function getAllWorkoutExercises(){
-    return ax.get("workout_exercises/").then(resp => (resp.data)).catch(error => errorHandler("Error Getting All workout exercises" + error));
-}
-
-export function getWorkoutExercisesById(id){
-    return ax.get("workout_exercises/" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Workout Exercise By Id:" + error));
+export function getWorkoutById(id){
+    return ax.get("workouts/" + id).then(resp => (resp.data)).catch(error => errorHandler("Error Getting workout by id" + error));
 }
 
 export function getWorkoutByUserId(id){
     return ax.get("workouts/?user_id=" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting Workouts By Id:" + error));
+}
+
+export function getExercisesByWorkoutId(id){
+    return ax.get("exercises/?workout_id=" + id).then(resp => (resp.data)).catch((error) => errorHandler("Error Getting exercises By workoutId:" + error));
 }
 
 export function getExerciseById(id){
@@ -76,9 +81,7 @@ export function insertWorkout(workout){
     return ax.post("workouts/", workout).catch((error) => errorHandler("Error Inserting Workout:" + error));
 }
 
-export function insertWorkoutExercise(workoutExercise){
-    return ax.post("workout_exercises/", workoutExercise).catch((error) => errorHandler("Error Inserting Workout_exercise" + error));
-}
+
 
 
 

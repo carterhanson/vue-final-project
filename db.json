@@ -38,9 +38,36 @@
     },
     {
       "id": 98,
+      "firstName": "Carter",
+      "lastName": "Hanson",
+      "email": "test@test.com",
+      "password": "test",
+      "roleId": 1,
+      "active": true
+    },
+    {
+      "id": 99,
       "firstName": "test",
       "lastName": "test",
-      "email": "test@test.com",
+      "email": "test@123.com",
+      "password": "test",
+      "roleId": 1,
+      "active": true
+    },
+    {
+      "id": 100,
+      "firstName": "new",
+      "lastName": "new",
+      "email": "test@4.com",
+      "password": "test",
+      "roleId": 1,
+      "active": true
+    },
+    {
+      "id": 101,
+      "firstName": "new",
+      "lastName": "new",
+      "email": "new@123.com",
       "password": "test",
       "roleId": 1,
       "active": true
@@ -58,45 +85,7 @@
       "description": "A user with elevated permissions"
     }
   ],
-  "exercises": [
-    {
-      "exercise_id": 1,
-      "exercise_name": "Bench Press",
-      "muscle_group": "Chest",
-      "description": "Lift the barbell while lying on a bench."
-    },
-    {
-      "exercise_id": 2,
-      "exercise_name": "Squat",
-      "muscle_group": "Legs",
-      "description": "Lower your body by bending your knees and hips."
-    },
-    {
-      "exercise_id": 3,
-      "exercise_name": "Bicep Curl",
-      "muscle_group": "Arms",
-      "description": "Curl a dumbbell towards your shoulder."
-    }
-  ],
   "workouts": [
-    {
-      "workout_id": 1,
-      "user_id": 1,
-      "workout_name": "Upper Body Workout",
-      "notes": "Focus on chest and arms."
-    },
-    {
-      "workout_id": 2,
-      "user_id": 2,
-      "workout_name": "Leg Day",
-      "notes": "Squats and lunges."
-    },
-    {
-      "workout_id": 3,
-      "user_id": 3,
-      "workout_name": "Arm Day",
-      "notes": "Biceps and triceps exercises."
-    },
     {
       "id": 4,
       "user_id": 96,
@@ -104,36 +93,158 @@
       "notes": "test"
     },
     {
-      "workout_name": "fdsafds",
-      "notes": "fadsfas",
+      "workout_name": "Legs",
+      "notes": "monday",
       "user_id": 96,
-      "id": 7
+      "id": 12
+    },
+    {
+      "workout_name": "back",
+      "notes": "gsdf",
+      "user_id": 96,
+      "id": 13
+    },
+    {
+      "workout_name": "Pull Day",
+      "notes": "back and biceps",
+      "user_id": 7,
+      "id": 14
     }
   ],
-  "workout_exercises": [
+  "exercises": [
     {
+      "id": 1,
       "workout_id": 1,
-      "exercise_id": 1,
+      "exercise_name": "Bench Press",
       "sets": 3,
       "repetitions": 12,
       "weight": 225,
       "notes": "Performed with a barbell."
     },
     {
+      "id": 2,
       "workout_id": 2,
-      "exercise_id": 2,
+      "exercise_name": "Squat",
       "sets": 4,
       "repetitions": 10,
       "weight": 135,
       "notes": "Use proper form and depth."
     },
     {
+      "id": 3,
       "workout_id": 3,
-      "exercise_id": 3,
-      "sets": 3,
+      "exercise_name": "Bicep Curl",
+      "sets": "15",
       "repetitions": 15,
       "weight": 25,
       "notes": "Use dumbbells for isolation."
+    },
+    {
+      "id": 4,
+      "workout_id": 3,
+      "exercise_name": "Pull up",
+      "sets": 3,
+      "repetitions": 15,
+      "weight": 25,
+      "notes": "used 15 lbs more than bodyweight"
+    },
+    {
+      "exercise_name": "deadlift",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "500",
+      "notes": "Heavy",
+      "id": 5
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "500",
+      "notes": "Heavy",
+      "workout_id": 3,
+      "id": 6
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "500",
+      "notes": "Heavy",
+      "workout_id": 3,
+      "id": 7
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "6",
+      "repetitions": "6",
+      "weight": "600",
+      "notes": "sfds",
+      "workout_id": 9,
+      "id": 8
+    },
+    {
+      "exercise_name": "Deadlift",
+      "sets": "6",
+      "repetitions": "6",
+      "weight": "600",
+      "notes": "4234",
+      "workout_id": 9,
+      "id": 9
+    },
+    {
+      "exercise_name": "Squats",
+      "sets": "13",
+      "repetitions": "5",
+      "weight": "400",
+      "notes": "Went deep\nadded 5 more sets",
+      "workout_id": 12,
+      "id": 10
+    },
+    {
+      "exercise_name": "test",
+      "sets": "19",
+      "repetitions": "12",
+      "weight": "1220",
+      "notes": "...",
+      "workout_id": 12,
+      "id": 11
+    },
+    {
+      "exercise_name": "Bent over row",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "400",
+      "notes": "was light!",
+      "workout_id": 3,
+      "id": 12
+    },
+    {
+      "exercise_name": "Pull Up",
+      "sets": "5",
+      "repetitions": "10",
+      "weight": "25",
+      "notes": "2 sets of weighted pull ups 3 sets no weight",
+      "workout_id": 14,
+      "id": 13
+    },
+    {
+      "exercise_name": "Bent Over Row",
+      "sets": "5",
+      "repetitions": "5",
+      "weight": "225",
+      "notes": "Worked up to 225 did 2 working sets of 5 reps and 1 set of 185",
+      "workout_id": 14,
+      "id": 14
+    },
+    {
+      "exercise_name": "Hammer Curls",
+      "sets": "3",
+      "repetitions": "14",
+      "weight": "40",
+      "notes": "Alternating hand curls 14 each hand.\nfollowing sets had to match the 14 reps",
+      "workout_id": 14,
+      "id": 15
     }
   ]
 }
